@@ -7,7 +7,7 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 
-MONTHS = ['all','january', 'february', 'march', 'april','may', 'june', 'july',
+ALL_MONTHS = ['all','january', 'february', 'march', 'april','may', 'june', 'july',
               'august', 'september', 'october', 'november', 'december']
 
 DAYS = ['all', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday']
@@ -34,7 +34,7 @@ def get_filters():
     # get user input for month (all, january, february, ... , june)
     while True:
         month = input("Please enter month, for all enter all: ").lower()
-        if month in MONTHS:
+        if month in ALL_MONTHS:
             break
         else:
             print('Your input invalid.')
@@ -72,7 +72,7 @@ def load_data(city, month, day):
         
     # filter by month if applicable
     if month != 'all':
-        month = MONTHS.index(month)
+        month = ALL_MONTHS.index(month)
         df = df[df['Month'] == month]
         
     # filter by day of week if applicable
@@ -95,7 +95,7 @@ def time_stats(df):
     common_start_hour = pd.to_datetime(df['Start Time']).dt.hour.mode()[0]
     
     # extract data and output them
-    table_data = pd.Series({"Common Month":MONTHS[common_month].title(),
+    table_data = pd.Series({"Common Month":ALL_MONTHS[common_month].title(),
                            "Common Day":DAYS[common_day].title(),
                            "Common Hour":common_start_hour})
     tabulate_output(table_data, headers=["Time Unit", "Value"])
