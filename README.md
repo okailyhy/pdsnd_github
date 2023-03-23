@@ -4,10 +4,10 @@
 23/03/2023
 
 ### Project Title
-Replace the Project Title
+US Bikeshare Project
 
 ### Description
-Describe what your project is about and what it does
+This project is a part of Udacity course
 
 ### Files used
 Include the files used
