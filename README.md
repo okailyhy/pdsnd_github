@@ -10,7 +10,7 @@ US Bikeshare Project
 This project is a part of Udacity course
 
 ### Files used
-Include the files used
+all data sources of bikeshare Project
 
 ### Credits
 https://pandas.pydata.org/docs/index.html
