@@ -12,7 +12,6 @@ MONTHS = ['all','january', 'february', 'march', 'april','may', 'june', 'july',
 
 DAYS = ['all', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday']
 
-
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
@@ -64,10 +63,10 @@ def load_data(city, month, day):
 
     df = pd.read_csv(CITY_DATA[city])
     
-    #add a new column (Month) with value exctracted from (Start Time)
+    # add a new column (Month) with value exctracted from (Start Time)
     df['Month'] = pd.to_datetime(df['Start Time']).dt.month
     
-    #add a new column (Day) with value exctracted from (Start Time)
+    # add a new column (Day) with value exctracted from (Start Time)
     df['Day'] = pd.to_datetime(df['Start Time']).dt.dayofweek
     df['Hour'] = pd.to_datetime(df['Start Time']).dt.hour
         
