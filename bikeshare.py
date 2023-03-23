@@ -196,7 +196,7 @@ def tabulate_output(data: pd.Series, headers = ["Label", "Value"]):
     
     print(tabulate(data_list, headers="firstrow", tablefmt="grid"))
 
-def show_raw_data(df):
+def display_raw_data(df):
     """show raw data upon user request"""
     next_flag = input('\nWould you like to view 5 rows of individual trip data? Enter yes or no\n').lower()
     start_loc = 0
@@ -214,7 +214,7 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
-        show_raw_data(df)
+        display_raw_data(df)
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
